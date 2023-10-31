@@ -3,7 +3,7 @@ import photosSlice from './photoSlice';
 
 const store = configureStore({
   reducer: {
-    photos: photosSlice.reducer,
+    photos: photosSlice,
   },
 });
 

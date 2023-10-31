@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import {fetchPhotos} from '../api';
 
 export const fetchPhotosAsync = createAsyncThunk(
@@ -9,7 +9,7 @@ export const fetchPhotosAsync = createAsyncThunk(
   },
 );
 
-export const photosSlice = createSlice({
+const photosSlice = createSlice({
   name: 'photos',
   initialState: {data: [], status: 'idle', error: null},
   reducers: {},
@@ -31,3 +31,5 @@ export const photosSlice = createSlice({
 
 export const selectPhotos = state => state.photos.data;
 export const selectPhotosStatus = state => state.photos.status;
+
+export default photosSlice.reducer;
